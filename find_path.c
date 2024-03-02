@@ -1,5 +1,4 @@
-#include "shell.h" 
-
+#include "shell.h"
 /**
  * find_path - This will find the path of a command using PATH
  * @cmd: This is the command to find
@@ -12,10 +11,6 @@ char *find_path(const char *cmd)
 	char *file_path = getenv("PATH");
 	char *file_path_copy = strdup(file_path); /* duplicate path*/
 
-/*	if (file_path_copy == NULL)
-	{
-		perror("Error allocating memory");
-		return (NULL);*/
 	if (file_path == NULL)
 	{
 		perror("Error getting PATH");
@@ -33,7 +28,6 @@ char *find_path(const char *cmd)
 		if (full_path == NULL)
 		{
 			perror("Error allocating memory");
-/*			free(file_path_copy);*/
 			return (NULL);
 		}
 		/* loop through each directory in the PATH*/
@@ -41,14 +35,6 @@ char *find_path(const char *cmd)
 		{
 			snprintf(full_path, full_path_size, "%s/%s", path_dir_token, cmd);
 			/* check if the command is in the path */
-/*			if (access(full_path, F_OK) == 0)
-			{	if (access(full_path, X_OK) == 0)
-				{
-					free(file_path_copy);
-					return (full_path);
-				}
-				path_dir_token = strtok(NULL,":");
-			}*/
 			if (access(full_path, X_OK) == 0)
 			{
 				free(file_path_copy);

@@ -28,31 +28,7 @@ void execute_cmd(char **array)
 		}
 		else if (c_pid == 0)
 		{
-		/*	char *cmd = array[0];*/
 			char *full_path = child_proc_exec_cmd_with_path(array[0]);
-/*
-			if (strcmp(array[0], full_path) == 0)
-			{
-				if (execve(array[0], array, NULL) == -1)
-				{
-					perror("Error executing newss command:");
-					free(array);
-					free(full_path);
-					exit(EXIT_FAILURE);
-				}
-			}
-			else
-			{
-				if (execve(full_path, array, NULL) == -1)
-				{
-					perror("Error executing new command: ");
-					free(array);
-					free(full_path);
-					exit(EXIT_FAILURE);
-				}
-			}
-*/		
-
 
 			if (execve(full_path, array, NULL) == -1)
 			{

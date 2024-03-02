@@ -23,6 +23,8 @@ char *child_proc_exec_cmd_with_path(const char *array);
 void execute_builtin_cmd(char **array);
 void chdir_home(void);
 void exit_shell(void);
+/*void parse_command(char *cmd, size_t read_cmd, char *delimiters,
+		char ***array, char ***av, int *num_tokens);*/
 void err_msg(char *cmd);
 
 /* Declare enironment variable globally */

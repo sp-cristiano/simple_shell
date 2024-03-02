@@ -20,9 +20,6 @@ char *child_proc_exec_cmd_with_path(const char *array)
 			perror(array);
 			exit(EXIT_FAILURE);
 		}
-		/*sprintf(err_msg, "%s: %d: %s: not found\n", SHELL_NAME, __LINE__, array);*/
-/*		sprintf(err_msg, "%s: %d: %s: not found\n", array[-1], __LINE__, array[0]);
-		write(STDERR_FILENO, err_msg, strlen(err_msg));*/
 		perror("Error::");
 		free(err_msg);
 		exit(EXIT_FAILURE);

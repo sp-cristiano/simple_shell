@@ -26,7 +26,7 @@ void exit_shell(void)
 	sleep(1);
 	write(STDOUT_FILENO, msg4_3, strlen(msg4_3));
 	write(STDOUT_FILENO, msg5, strlen(msg5));
-	
+
 	run = false;
 	run = run;
 
